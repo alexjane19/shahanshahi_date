@@ -1,7 +1,7 @@
 name: shahanshahi_date
 description: >
-  A Flutter and Dart package for using Jalali (Shamsi, Solar, Persian, Jalaali or شمسی) calendar.
-  You can convert, format and manipulate Jalali and Gregorian (Miladi) date and times.
+  A Flutter and Dart package for using Shahanshahi (Zoroastrianism, Persian, شاهنشاهی) calendar. 
+  You can convert, format and manipulate Shahanshahi, Jalali and Gregorian (Miladi or میلادی) date and times.
 repository: https://github.com/alexjane19/shahanshahi_date
 homepage: https://github.com/alexjane19/shahanshahi_date
 
