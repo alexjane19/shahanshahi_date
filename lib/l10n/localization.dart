@@ -17,7 +17,7 @@ class Localization {
     if (locale == Locale.en) {
       messages = _toMessageMap(messagesEn);
     }
-    if (locale == Locale.fa) {
+    else {
       messages = _toMessageMap(messagesFa);
     }
   }
