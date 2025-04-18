@@ -5,7 +5,7 @@
 import '../date.dart';
 import '../date_exception.dart';
 import '../gregorian/gregorian_date.dart';
-import '../jalali/jalali_formatter.dart';
+import 'jalali_formatter.dart';
 
 part 'jalali_calculation.dart';
 

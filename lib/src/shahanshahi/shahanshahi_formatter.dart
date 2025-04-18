@@ -1,22 +1,21 @@
-// Copyright 2018 - 2024, Amirreza Madani. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
+import 'package:shahanshahi_date/l10n/localization.dart';
+import 'package:shahanshahi_date/l10n/message.dart';
 
 import '../date_formatter.dart';
-import 'jalali_date.dart';
+import 'shahanshahi_date.dart';
 
-/// Jalali date formatter class
-class JalaliFormatter extends DateFormatter {
-  /// make a [JalaliFormatter] from [Jalali] date
-  const JalaliFormatter(Jalali date) : super(date);
+/// Shahanshahi date formatter class
+class ShahanshahiFormatter extends DateFormatter {
+  /// make a [ShahanshahiFormatter] from [Shahanshahi] date
+  const ShahanshahiFormatter(Shahanshahi date) : super(date);
 
-  /// Jalali month names
+  /// Shahanshahi month names
   static const List<String> _monthNames = [
     'فروردین',
     'اردیبهشت',
     'خرداد',
     'تیر',
-    'مرداد',
+    'آمرداد',
     'شهریور',
     'مهر',
     'آبان',
@@ -26,7 +25,7 @@ class JalaliFormatter extends DateFormatter {
     'اسفند',
   ];
 
-  /// Jalali Month Names in Afghanistan
+  /// Shahanshahi Month Names in Afghanistan
   static const List<String> _monthNamesAfghanistan = [
     'حمل',
     'ثور',
@@ -42,7 +41,7 @@ class JalaliFormatter extends DateFormatter {
     'حوت',
   ];
 
-  /// Jalali week day names
+  /// Shahanshahi week day names
   static const List<String> _weekDayNames = [
     'شنبه',
     'یک شنبه',
@@ -53,20 +52,20 @@ class JalaliFormatter extends DateFormatter {
     'جمعه',
   ];
 
-  /// Jalali month name
+  /// Shahanshahi month name
   @override
   String get mN {
-    return _monthNames[date.month - 1];
+    return Localization.month(date.month);
   }
 
-  /// Jalali month name in Afghanistan
+  /// Shahanshahi month name in Afghanistan
   String get mNAf {
-    return _monthNamesAfghanistan[date.month - 1];
+    return Localization.month(date.month, type: MessageType.afghanistan);
   }
 
-  /// Jalali week day name
+  /// Shahanshahi week day name
   @override
   String get wN {
-    return _weekDayNames[date.weekDay - 1];
+    return Localization.weekday(date.weekDay);
   }
 }

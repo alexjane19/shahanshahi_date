@@ -1,8 +1,4 @@
-// Copyright 2018 - 2024, Amirreza Madani. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
-import 'package:shamsi_date/shamsi_date.dart';
+import 'package:shahanshahi_date/shahanshahi_date.dart';
 import 'package:test/test.dart';
 
 Matcher get tde => throwsA(isA<DateException>());

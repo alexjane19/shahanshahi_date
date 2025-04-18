@@ -2,9 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import '../shahanshahi/shahanshahi_date.dart';
+
 import '../date.dart';
 import '../date_exception.dart';
-import '../gregorian/gregorian_formatter.dart';
+import 'gregorian_formatter.dart';
 import '../jalali/jalali_date.dart';
 
 part 'gregorian_calculation.dart';
@@ -258,6 +260,17 @@ class Gregorian extends Date {
   /// Converts a Gregorian date to Jalali.
   Jalali toJalali() {
     return Jalali.fromJulianDayNumber(
+      julianDayNumber,
+      hour,
+      minute,
+      second,
+      millisecond,
+    );
+  }
+
+  /// Converts a Gregorian date to Shahanshahi.
+  Shahanshahi toShahanshahi() {
+    return Shahanshahi.fromJulianDayNumber(
       julianDayNumber,
       hour,
       minute,

@@ -1,4 +1,4 @@
-import 'package:shamsi_date/shamsi_date.dart';
+import 'package:shahanshahi_date/shahanshahi_date.dart';
 
 void main() {
   // Gregorian to Jalali conversion

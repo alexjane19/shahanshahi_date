@@ -1,8 +1,8 @@
-# A Flutter and Dart package for using Jalali (Shamsi, Solar, Persian, Jalaali, شمسی or خورشیدی) calendar. You can convert, format and manipulate Jalali and Gregorian (Miladi or میلادی) date and times.
+# A Flutter and Dart package for using Shahanshahi (Zoroastrianism, Persian, شاهنشاهی) calendar. You can convert, format and manipulate Shahanshahi, Jalali and Gregorian (Miladi or میلادی) date and times.
 
-[![pub](https://img.shields.io/pub/v/shamsi_date.svg?color=blue&label=shamsi_date)](https://pub.dev/packages/shamsi_date)
-[![build](https://img.shields.io/github/actions/workflow/status/FatulM/shamsi_date/.github/workflows/build.yml?branch=master&label=build)](https://github.com/FatulM/shamsi_date/actions/workflows/build.yml)
-[![coverage](https://img.shields.io/codecov/c/gh/FatulM/shamsi_date?label=coverage)](https://codecov.io/gh/FatulM/shamsi_date)
+[![pub](https://img.shields.io/pub/v/shahanshahi_date.svg?color=blue&label=shahanshahi_date)](https://pub.dev/packages/shahanshahi_date)
+[![build](https://img.shields.io/github/actions/workflow/status/FatulM/shahanshahi_date/.github/workflows/build.yml?branch=master&label=build)](https://github.com/FatulM/shahanshahi_date/actions/workflows/build.yml)
+[![coverage](https://img.shields.io/codecov/c/gh/FatulM/shahanshahi_date?label=coverage)](https://codecov.io/gh/FatulM/shahanshahi_date)
 
 This is a pure dart package and Algorithm is based on popular JavaScript library [jalaali-js](https://github.com/jalaali/jalaali-js) with more than 20k monthly downloads.
 
@@ -10,11 +10,11 @@ This package has a lot of unit tests with high test coverage for ensuring its co
 
 ## Key Features
 
-- Convert between [Jalali][], [Gregorian][] and Flutter's [DateTime][] objects.
+- Convert between [Shahanshahi][], [Jalali][], [Gregorian][] and Flutter's [DateTime][] objects.
 - Access year, month, day, weekday, Julian day number, month length and ... through getters.
-- Format Jalali and Georgian dates with an easy and powerful syntax using [DateFormatter][].
-- Ensure Jalali and Georgian dates validity.
-- Check if a Jalali or Gregorian year is leap.
+- Format Shahanshahi, Jalali and Georgian dates with an easy and powerful syntax using [DateFormatter][].
+- Ensure Shahanshahi, Jalali and Georgian dates validity.
+- Check if a Shahanshahi or Jalali or Gregorian year is leap.
 - Immutable date objects with copy methods for easy manipulation.
 - Compare Dates easily with comparison operators or by using [Comparable][].
 - Add or subtract days with `+` and `-` operators.
@@ -44,13 +44,13 @@ Add it to your pubspec.yaml file:
 
 ```yaml
 dependencies:
-    shamsi_date: ^latest.version
+    shahanshahi_date: ^latest.version
 ```
 
 Then depend on it:
 
 ```dart
-import 'package:shamsi_date/shamsi_date.dart';
+import 'package:shahanshahi_date/shahanshahi_date.dart';
 ```
 
 [Jalali][] class is used for **Shamsi (Jalali, Persian, شمسی or خورشیدی)** date and [Gregorian][] class is used for **Gregorian (Miladi or میلادی)** date. Jalali and Gregorian classes are the subclasses of [Date][].
@@ -86,7 +86,7 @@ void main() {
 }
 ```
 
-Jalali and Gregorian objects are immutable. So using operators and methods will give you  new object and does not manipulate the object in place, like String objects. Almost all other objects in shamsi_date library are immutable too.
+Jalali and Gregorian objects are immutable. So using operators and methods will give you  new object and does not manipulate the object in place, like String objects. Almost all other objects in shahanshahi_date library are immutable too.
 
 You can access `year`, `month`, `day`, `hour`, `minute`, `second` and `millisecond` through getters on Jalali or Gregorian dates. You can get week day number of Jalali and Gregorian by using `weekDay` getter. Week days range from 1 to 7. Jalali week starts with `Shanbe` and Gregorian week starts with `Monday`. Month length can be accessed using `monthLength` getter. Month length is sensitive to leap years. you can check if the year is a leap year by `isLeapYear()` method. Julian day number is also accessible through `julianDayNumber` getter. for example:
 
@@ -344,10 +344,10 @@ bool b6 = j1 != j2; // b6 = true
 
 ## Example
 
-Here is a complete example. If you did not find what you are looking for, you can check `test/shamsi_date_test.dart` file which includes unit tests.
+Here is a complete example. If you did not find what you are looking for, you can check `test/shahanshahi_date_test.dart` file which includes unit tests.
 
 ```dart
-import 'package:shamsi_date/shamsi_date.dart';
+import 'package:shahanshahi_date/shahanshahi_date.dart';
 
 void main() {
   // Gregorian to Jalali conversion
@@ -596,10 +596,10 @@ void main() {
 }
 ```
 
-[Jalali]: https://pub.dev/documentation/shamsi_date/latest/shamsi_date/Jalali-class.html
-[Gregorian]: https://pub.dev/documentation/shamsi_date/latest/shamsi_date/Gregorian-class.html
+[Jalali]: https://pub.dev/documentation/shahanshahi_date/latest/shahanshahi_date/Jalali-class.html
+[Gregorian]: https://pub.dev/documentation/shahanshahi_date/latest/shahanshahi_date/Gregorian-class.html
 [DateTime]: https://api.flutter.dev/flutter/dart-core/DateTime-class.html
-[Date]: https://pub.dev/documentation/shamsi_date/latest/shamsi_date/Date-class.html
-[DateFormatter]: https://pub.dev/documentation/shamsi_date/latest/shamsi_date/DateFormatter-class.html
+[Date]: https://pub.dev/documentation/shahanshahi_date/latest/shahanshahi_date/Date-class.html
+[DateFormatter]: https://pub.dev/documentation/shahanshahi_date/latest/shahanshahi_date/DateFormatter-class.html
 [Comparable]: https://api.flutter.dev/flutter/dart-core/Comparable-class.html
-[DateException]: https://pub.dev/documentation/shamsi_date/latest/shamsi_date/DateException-class.html
+[DateException]: https://pub.dev/documentation/shahanshahi_date/latest/shahanshahi_date/DateException-class.html

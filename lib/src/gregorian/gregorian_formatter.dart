@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import '../date_formatter.dart';
-import '../gregorian/gregorian_date.dart';
+import 'gregorian_date.dart';
 
 /// Gregorian date formatter class
 class GregorianFormatter extends DateFormatter {
