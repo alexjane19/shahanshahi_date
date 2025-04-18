@@ -18,3 +18,4 @@ export 'src/jalali/jalali_date.dart';
 export 'src/jalali/jalali_formatter.dart';
 export 'src/shahanshahi/shahanshahi_date.dart';
 export 'src/shahanshahi/shahanshahi_formatter.dart';
+export 'l10n/localization.dart';
