@@ -55,17 +55,17 @@ class ShahanshahiFormatter extends DateFormatter {
   /// Shahanshahi month name
   @override
   String get mN {
-    return Localization.month(date.month);
+    return LocalizationMessages.month(date.month);
   }
 
   /// Shahanshahi month name in Afghanistan
   String get mNAf {
-    return Localization.month(date.month, type: MessageType.afghanistan);
+    return LocalizationMessages.month(date.month, type: MessageType.afghanistan);
   }
 
   /// Shahanshahi week day name
   @override
   String get wN {
-    return Localization.weekday(date.weekDay);
+    return LocalizationMessages.weekday(date.weekDay);
   }
 }

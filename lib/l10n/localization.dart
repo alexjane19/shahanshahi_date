@@ -4,14 +4,14 @@ import 'messages_fa.dart';
 
 void initializeMessagesForLocale(String locale) {
   final locale0 = Locale.values.firstWhere((item) => item.name == locale);
-  Localization(locale0).init();
+  LocalizationMessages(locale0).init();
 }
 
-class Localization {
+class LocalizationMessages {
   final Locale locale;
   static Map<MessageKey, String> messages = {};
 
-  Localization(this.locale);
+  LocalizationMessages(this.locale);
 
   void init() {
     if (locale == Locale.en) {
