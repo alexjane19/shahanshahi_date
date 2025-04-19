@@ -219,6 +219,8 @@ class Shahanshahi extends Date {
   Shahanshahi withMonth(int month) => Shahanshahi(year, month, day, hour, minute, second, millisecond);
   @override
   Shahanshahi withDay(int day) => Shahanshahi(year, month, day, hour, minute, second, millisecond);
+
+  String toDisplay() => '${formatter.wN} - $day ${formatter.mN} $year';
 }
 
 extension _JalaliToShahanshahi on Jalali {
