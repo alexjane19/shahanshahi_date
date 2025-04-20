@@ -16,7 +16,7 @@ final List<Message> messagesFa =[
   Message('month_2', 'اردیبهشت', MessageType.general),
   Message('month_3', 'خرداد', MessageType.general),
   Message('month_4', 'تیر', MessageType.general),
-  Message('month_5', 'آمرداد', MessageType.general),
+  Message('month_5', 'امرداد', MessageType.general),
   Message('month_6', 'شهریور', MessageType.general),
   Message('month_7', 'مهر', MessageType.general),
   Message('month_8', 'آبان', MessageType.general),
