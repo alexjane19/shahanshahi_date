@@ -37,4 +37,13 @@ final List<Message> messagesEn = [
   Message('month_10', 'Jadi', MessageType.afghanistan),
   Message('month_11', 'Dalwa', MessageType.afghanistan),
   Message('month_12', 'Hoot', MessageType.afghanistan),
+
+  // Weekday Names (Mitrai)
+  Message('day_1', 'Keyvanshid', MessageType.mitrai),
+  Message('day_2', 'Mehrshid', MessageType.mitrai),
+  Message('day_3', 'Mahshid', MessageType.mitrai),
+  Message('day_4', 'Bahramshid', MessageType.mitrai),
+  Message('day_5', 'Tirshid', MessageType.mitrai),
+  Message('day_6', 'Hormozshid', MessageType.mitrai),
+  Message('day_7', 'Nahidshid', MessageType.mitrai),
 ];

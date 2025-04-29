@@ -1,14 +1,13 @@
-
 import 'message.dart';
 
-final List<Message> messagesFa =[
+final List<Message> messagesFa = [
   // Weekday Names (General)
   Message('day_1', 'شنبه', MessageType.general),
-  Message('day_2', 'یک شنبه', MessageType.general),
-  Message('day_3', 'دو شنبه', MessageType.general),
-  Message('day_4', 'سه شنبه', MessageType.general),
-  Message('day_5', 'چهار شنبه', MessageType.general),
-  Message('day_6', 'پنج شنبه', MessageType.general),
+  Message('day_2', 'یک‌شنبه', MessageType.general),
+  Message('day_3', 'دوشنبه', MessageType.general),
+  Message('day_4', 'سه‌شنبه', MessageType.general),
+  Message('day_5', 'چهارشنبه', MessageType.general),
+  Message('day_6', 'پنج‌شنبه', MessageType.general),
   Message('day_7', 'آدینه', MessageType.general),
 
   // Month Names (General)
@@ -41,5 +40,10 @@ final List<Message> messagesFa =[
 
   // Weekday Names (Mitrai)
   Message('day_1', 'کیوان‌شید', MessageType.mitrai),
-
+  Message('day_2', 'مهرشید', MessageType.mitrai),
+  Message('day_3', 'مه‌شید', MessageType.mitrai),
+  Message('day_4', 'بهرام‌شید', MessageType.mitrai),
+  Message('day_5', 'تیرشید', MessageType.mitrai),
+  Message('day_6', 'هرمزشید', MessageType.mitrai),
+  Message('day_7', 'ناهیدشید', MessageType.mitrai),
 ];
