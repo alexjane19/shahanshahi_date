@@ -789,6 +789,9 @@ void main() {
   });
 
   test('Jalali.formatter', () {
+    LocalizationMessages.setLocale(Locale.fa);
+    LocalizationMessages.setDefaultMessageType(MessageType.general);
+
     final j1 = Jalali(1397, 1, 3);
     final f1 = j1.formatter;
 
@@ -800,7 +803,7 @@ void main() {
     expect(f1.dd, '03');
     expect(f1.d, '3');
     expect(f1.mN, 'فروردین');
-    expect(f1.wN, 'جمعه');
+    expect(f1.wN, 'آدینه');
 
     final j2 = Jalali(1397, 10, 28);
     final f2 = j2.formatter;
@@ -821,10 +824,13 @@ void main() {
     expect(f3.dd, '03');
     expect(f3.d, '3');
     expect(f3.mN, 'فروردین');
-    expect(f3.wN, 'جمعه');
+    expect(f3.wN, 'آدینه');
   });
 
   test('Jalali.formatter.mNAf', () {
+    LocalizationMessages.setLocale(Locale.fa);
+    LocalizationMessages.setDefaultMessageType(MessageType.general);
+
     final j1 = Jalali(1397, 1, 3);
     final f1 = j1.formatter;
 
@@ -834,6 +840,56 @@ void main() {
     final f2 = j2.formatter;
 
     expect(f2.mNAf, 'سرطان');
+  });
+
+  test('LocalizationMessages locale switch and default message type', () {
+    final j = Jalali(1397, 1, 3).formatter;
+
+    LocalizationMessages.setLocale(Locale.fa);
+    LocalizationMessages.setDefaultMessageType(MessageType.general);
+    expect(j.mN, 'فروردین');
+    expect(j.wN, 'آدینه');
+
+    LocalizationMessages.setLocale(Locale.en);
+    expect(j.mN, 'Farvardin');
+    expect(j.wN, 'Adineh');
+
+    LocalizationMessages.setDefaultMessageType(MessageType.mitrai);
+    expect(j.wN, 'Nahidshid');
+    expect(j.mN, 'Farvardin');
+
+    LocalizationMessages.setDefaultMessageType(MessageType.general);
+    LocalizationMessages.setLocale(Locale.fa);
+  });
+
+  test('Formatter explicit locale and message type override', () {
+    final j = Jalali(1397, 1, 3).formatter;
+
+    LocalizationMessages.setLocale(Locale.fa);
+    LocalizationMessages.setDefaultMessageType(MessageType.general);
+
+    expect(j.monthName(locale: Locale.en), 'Farvardin');
+    expect(j.weekDayName(locale: Locale.en), 'Adineh');
+    expect(
+      j.weekDayName(locale: Locale.fa, type: MessageType.mitrai),
+      'ناهیدشید',
+    );
+  });
+
+  test('Shahanshahi formatter follows locale and type settings', () {
+    final s = Shahanshahi(2577, 1, 3).formatter;
+
+    LocalizationMessages.setLocale(Locale.en);
+    LocalizationMessages.setDefaultMessageType(MessageType.general);
+    expect(s.mN, 'Farvardin');
+    expect(s.wN, 'Adineh');
+
+    LocalizationMessages.setDefaultMessageType(MessageType.mitrai);
+    expect(s.wN, 'Nahidshid');
+    expect(s.monthName(type: MessageType.afghanistan), 'Hamal');
+
+    LocalizationMessages.setDefaultMessageType(MessageType.general);
+    LocalizationMessages.setLocale(Locale.fa);
   });
 
   test('Gregorian.formatter', () {

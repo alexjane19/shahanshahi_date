@@ -2,6 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:shahanshahi_date/l10n/localization.dart';
+import 'package:shahanshahi_date/l10n/message.dart';
+
 import '../date_formatter.dart';
 import 'jalali_date.dart';
 
@@ -10,63 +13,38 @@ class JalaliFormatter extends DateFormatter {
   /// make a [JalaliFormatter] from [Jalali] date
   const JalaliFormatter(Jalali date) : super(date);
 
-  /// Jalali month names
-  static const List<String> _monthNames = [
-    'فروردین',
-    'اردیبهشت',
-    'خرداد',
-    'تیر',
-    'مرداد',
-    'شهریور',
-    'مهر',
-    'آبان',
-    'آذر',
-    'دی',
-    'بهمن',
-    'اسفند',
-  ];
-
-  /// Jalali Month Names in Afghanistan
-  static const List<String> _monthNamesAfghanistan = [
-    'حمل',
-    'ثور',
-    'جوزا',
-    'سرطان',
-    'اسد',
-    'سنبله',
-    'میزان',
-    'عقرب',
-    'قوس',
-    'جدی',
-    'دلو',
-    'حوت',
-  ];
-
-  /// Jalali week day names
-  static const List<String> _weekDayNames = [
-    'شنبه',
-    'یک شنبه',
-    'دو شنبه',
-    'سه شنبه',
-    'چهار شنبه',
-    'پنج شنبه',
-    'جمعه',
-  ];
-
   /// Jalali month name
   @override
   String get mN {
-    return _monthNames[date.month - 1];
+    return LocalizationMessages.month(date.month);
   }
 
   /// Jalali month name in Afghanistan
   String get mNAf {
-    return _monthNamesAfghanistan[date.month - 1];
+    return monthName(type: MessageType.afghanistan);
   }
 
   /// Jalali week day name
   @override
   String get wN {
-    return _weekDayNames[date.weekDay - 1];
+    return LocalizationMessages.weekday(date.weekDay);
+  }
+
+  /// Jalali month name with optional explicit locale and message type.
+  String monthName({Locale? locale, MessageType? type}) {
+    return LocalizationMessages.month(
+      date.month,
+      locale: locale,
+      type: type,
+    );
+  }
+
+  /// Jalali weekday name with optional explicit locale and message type.
+  String weekDayName({Locale? locale, MessageType? type}) {
+    return LocalizationMessages.weekday(
+      date.weekDay,
+      locale: locale,
+      type: type,
+    );
   }
 }

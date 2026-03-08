@@ -53,6 +53,30 @@ Then depend on it:
 import 'package:shahanshahi_date/shahanshahi_date.dart';
 ```
 
+## Localization
+
+Shahanshahi and Jalali formatter labels are localized through `LocalizationMessages`.
+Default locale is `Locale.fa` and default type is `MessageType.general`.
+
+```dart
+LocalizationMessages.setLocale(Locale.en);
+LocalizationMessages.setDefaultMessageType(MessageType.general);
+
+final j = Jalali(1404, 1, 1).formatter;
+print(j.mN); // Farvardin
+print(j.wN); // based on current locale/type
+
+// Explicit override per call:
+print(j.monthName(locale: Locale.fa)); // فروردین
+print(j.weekDayName(type: MessageType.mitrai)); // Mitrai weekday name
+```
+
+Backward-compatible API still works:
+
+```dart
+initializeMessagesForLocale('fa');
+```
+
 [Jalali][] class is used for **Shamsi (Jalali, Persian, شمسی or خورشیدی)** date and [Gregorian][] class is used for **Gregorian (Miladi or میلادی)** date. Jalali and Gregorian classes are the subclasses of [Date][].
 
 Jalali and Gregorian can be instantiated with providing `year`, `month` and `day` among other ways:

@@ -1,6 +1,9 @@
 import 'package:shahanshahi_date/shahanshahi_date.dart';
 
 void main() {
+  LocalizationMessages.setLocale(Locale.fa);
+  LocalizationMessages.setDefaultMessageType(MessageType.general);
+
   // Gregorian to Jalali conversion
   Gregorian g1 = Gregorian(2013, 1, 10, 12, 56, 34, 585);
   Jalali j1 = g1.toJalali();
