@@ -83,6 +83,23 @@ class LocalizationMessages {
         fallback: '$weekday',
       );
 
+  static String weekdayShort(
+    int dayNumber, {
+    Locale? locale,
+    MessageType? type,
+  }) {
+    final String weekDayName = weekday(
+      dayNumber,
+      locale: locale,
+      type: type,
+    );
+    if (weekDayName.isEmpty) {
+      return weekDayName;
+    }
+
+    return weekDayName.substring(0, 1).toUpperCase();
+  }
+
   static String month(
     int month, {
     Locale? locale,

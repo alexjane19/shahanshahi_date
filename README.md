@@ -71,6 +71,7 @@ print(j.wSN); // A
 print(j.monthName(locale: Locale.fa)); // فروردین
 print(j.weekDayName(type: MessageType.mitrai)); // Mitrai weekday name
 print(j.weekDayShortName(locale: Locale.fa)); // آ
+print(LocalizationMessages.weekdayShort(7, locale: Locale.en)); // A
 ```
 
 Backward-compatible API still works:
