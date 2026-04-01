@@ -65,10 +65,12 @@ LocalizationMessages.setDefaultMessageType(MessageType.general);
 final j = Jalali(1404, 1, 1).formatter;
 print(j.mN); // Farvardin
 print(j.wN); // based on current locale/type
+print(j.wSN); // A
 
 // Explicit override per call:
 print(j.monthName(locale: Locale.fa)); // فروردین
 print(j.weekDayName(type: MessageType.mitrai)); // Mitrai weekday name
+print(j.weekDayShortName(locale: Locale.fa)); // آ
 ```
 
 Backward-compatible API still works:

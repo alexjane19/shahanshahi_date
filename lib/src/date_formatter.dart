@@ -100,4 +100,17 @@ abstract class DateFormatter {
 
   /// week day name
   String get wN;
+
+  /// one-letter week day name using the first character in uppercase
+  String get wSN {
+    final String weekDayName = wN;
+    if (weekDayName.isEmpty) {
+      return weekDayName;
+    }
+
+    return weekDayName.substring(0, 1).toUpperCase();
+  }
+
+  /// backward-compatible alias for [wSN]
+  String get wNShort => wSN;
 }

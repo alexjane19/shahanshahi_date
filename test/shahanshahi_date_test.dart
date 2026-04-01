@@ -804,6 +804,8 @@ void main() {
     expect(f1.d, '3');
     expect(f1.mN, 'فروردین');
     expect(f1.wN, 'آدینه');
+    expect(f1.wSN, 'آ');
+    expect(f1.wNShort, 'آ');
 
     final j2 = Jalali(1397, 10, 28);
     final f2 = j2.formatter;
@@ -825,6 +827,8 @@ void main() {
     expect(f3.d, '3');
     expect(f3.mN, 'فروردین');
     expect(f3.wN, 'آدینه');
+    expect(f3.wSN, 'آ');
+    expect(f3.wNShort, 'آ');
   });
 
   test('Jalali.formatter.mNAf', () {
@@ -870,10 +874,13 @@ void main() {
 
     expect(j.monthName(locale: Locale.en), 'Farvardin');
     expect(j.weekDayName(locale: Locale.en), 'Adineh');
+    expect(j.weekDayShortName(locale: Locale.en), 'A');
     expect(
       j.weekDayName(locale: Locale.fa, type: MessageType.mitrai),
       'ناهیدشید',
     );
+    expect(
+        j.weekDayShortName(locale: Locale.fa, type: MessageType.mitrai), 'ن');
   });
 
   test('Shahanshahi formatter follows locale and type settings', () {
@@ -883,10 +890,18 @@ void main() {
     LocalizationMessages.setDefaultMessageType(MessageType.general);
     expect(s.mN, 'Farvardin');
     expect(s.wN, 'Adineh');
+    expect(s.wSN, 'A');
+    expect(s.wNShort, 'A');
 
     LocalizationMessages.setDefaultMessageType(MessageType.mitrai);
     expect(s.wN, 'Nahidshid');
+    expect(s.wSN, 'N');
+    expect(s.wNShort, 'N');
     expect(s.monthName(type: MessageType.afghanistan), 'Hamal');
+    expect(
+      s.weekDayShortName(locale: Locale.fa, type: MessageType.general),
+      'آ',
+    );
 
     LocalizationMessages.setDefaultMessageType(MessageType.general);
     LocalizationMessages.setLocale(Locale.fa);
@@ -905,6 +920,8 @@ void main() {
     expect(f1.d, '3');
     expect(f1.mN, 'January');
     expect(f1.wN, 'Wednesday');
+    expect(f1.wSN, 'W');
+    expect(f1.wNShort, 'W');
 
     final g2 = Gregorian(2018, 10, 28);
     final f2 = g2.formatter;
@@ -926,6 +943,8 @@ void main() {
     expect(f3.d, '3');
     expect(f3.mN, 'January');
     expect(f3.wN, 'Wednesday');
+    expect(f3.wSN, 'W');
+    expect(f3.wNShort, 'W');
   });
 
   test('Jalali.copy', () {

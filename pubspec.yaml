@@ -5,7 +5,7 @@ description: >
 repository: https://github.com/alexjane19/shahanshahi_date
 homepage: https://github.com/alexjane19/shahanshahi_date
 
-version: 1.0.4
+version: 1.0.5
 
 environment:
   sdk: '>=2.15.0 <4.0.0'

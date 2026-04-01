@@ -43,4 +43,15 @@ class ShahanshahiFormatter extends DateFormatter {
       type: type,
     );
   }
+
+  /// Shahanshahi short weekday name with optional explicit locale and
+  /// message type.
+  String weekDayShortName({Locale? locale, MessageType? type}) {
+    final String weekDayName0 = weekDayName(locale: locale, type: type);
+    if (weekDayName0.isEmpty) {
+      return weekDayName0;
+    }
+
+    return weekDayName0.substring(0, 1).toUpperCase();
+  }
 }
